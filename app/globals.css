@@ -1,8 +1,15 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F2F4F7;
+  --foreground: #333333;
+}
+@theme {
+  --color-customaccent: #FF6F61;
+  --color-customaccent-hover: #d15a4f;
+  --color-custombase: var(--background);
+  --color-customprimary: var(--foreground);
 }
 
 @theme inline {
