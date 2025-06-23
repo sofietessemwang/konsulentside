@@ -1,94 +1,185 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import Link from "next/link";
-import aboutPage from "@/app/about/page";
-//todos: legg til click to open for mobil størrelse slik at det ikke bare er hover??
-//ønsker å fjerne pilen ned den var stygg
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleContactButton = () => {
     console.log("trykket");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <div className="navbar shadow-sm">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <>
+      <div className="navbar shadow-sm relative z-50">
+        <div className="navbar-start">
+          {/* Mobile hamburger/close button */}
+          <div className="lg:hidden">
+            <button
+              className="btn btn-ghost"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Toggle menu"}
             >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
-            </svg>
+              {isMenuOpen ? (
+                // Close (X) icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                // Hamburger icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              )}
+            </button>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+          <a className="text-xl">Ronny Wang</a>
+        </div>
+
+        {/* Desktop menu */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
             <li>
               <Link href={""}>Testemonials</Link>
             </li>
             <li>
-              <Link href={""}>Services</Link>
-              <ul className="p-2">
-                <li>
-                  <Link href={""}>Sale</Link>
-                </li>
-                <li>
-                  <Link href={""}>Marketing</Link>
-                </li>
-              </ul>
+              <details>
+                <summary>Services</summary>
+                <ul className="p-2">
+                  <li>
+                    <Link href={""}>Sale</Link>
+                  </li>
+                  <li>
+                    <Link href={""}>Marketing</Link>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
-              <Link href={""}>About</Link>
+              <Link href={"/about"}>About</Link>
             </li>
           </ul>
         </div>
-        <a className=" text-xl">Ronny Wang</a>
+
+        <div className="navbar-end">
+          <Button
+            type={"button"}
+            title={"Kontakt meg"}
+            variant={"bg-customaccent hover:bg-customaccent-hover"}
+            onClick={handleContactButton}
+          />
+        </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link href={""}>Testemonials</Link>
-          </li>
-          <li>
-            <details>
-              <summary>Services</summary>
-              <ul className="p-2">
-                <li>
-                  <Link href={""}>Sale</Link>
-                </li>
-                <li>
-                  <Link href={""}>Marketing</Link>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <Link href={"/about"}>About</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <Button
-          type={"button"}
-          title={"Kontakt meg"}
-          variant={"bg-customaccent hover:bg-customaccent-hover"}
-          onClick={handleContactButton}
+
+      {/* Full-width mobile menu overlay */}
+      {isMenuOpen && (
+        /* skal egentlig være absolute her tror jeg men da dukker den ikke opp. hvis problemer senere sjekk her */
+        <div className="lg:hidden relative top-full left-0 right-0 z-40 bg-base-100 shadow-lg">
+          {/* Menu items */}
+          <div className="p-4">
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href={""}
+                  className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
+                  onClick={closeMenu}
+                >
+                  Testemonials
+                </Link>
+              </li>
+
+              {/* Services with submenu */}
+              <li>
+                <div className="py-3 px-4 text-lg font-medium">Services</div>
+                <ul className="ml-4 mt-2 space-y-2">
+                  <li>
+                    <Link
+                      href={""}
+                      className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
+                      onClick={closeMenu}
+                    >
+                      Sale
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={""}
+                      className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
+                      onClick={closeMenu}
+                    >
+                      Marketing
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <Link
+                  href={"/about"}
+                  className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
+                  onClick={closeMenu}
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
+
+            {/* Mobile contact button, kanksje fjerne denne? mtp brukergrensesnitt */}
+            <div className="mt-8">
+              <Button
+                type={"button"}
+                title={"Kontakt meg"}
+                variant={"bg-customaccent hover:bg-customaccent-hover w-full"}
+                onClick={() => {
+                  handleContactButton();
+                  closeMenu();
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Backdrop overlay */}
+      {isMenuOpen && (
+        <div
+          /* denne er litt rar kanksje endre på dette senere det er backdrop */
+          className="lg:hidden fixed inset-0 z-30 backdrop-blur-sm bg-base-300/50"
+          onClick={closeMenu}
         />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
