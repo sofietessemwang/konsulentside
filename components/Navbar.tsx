@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar shadow-sm relative z-50">
+      <div className="navbar shadow-sm  z-50 sticky top-0 bg-custombase ">
         <div className="navbar-start">
           {/* Mobile hamburger/close button */}
           <div className="lg:hidden">
@@ -71,23 +71,23 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href={""}>Testemonials</Link>
+              <Link href={""}>Referanser</Link>
             </li>
             <li>
               <details>
-                <summary>Services</summary>
+                <summary>Tjenester</summary>
                 <ul className="p-2">
                   <li>
-                    <Link href={""}>Sale</Link>
+                    <Link href={""}>Salg</Link>
                   </li>
                   <li>
-                    <Link href={""}>Marketing</Link>
+                    <Link href={""}>Markedsføring</Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <Link href={"/about"}>About</Link>
+              <Link href={"/about"}>Om</Link>
             </li>
           </ul>
         </div>
@@ -115,13 +115,13 @@ const Navbar = () => {
                   className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
                   onClick={closeMenu}
                 >
-                  Testemonials
+                  Referanser
                 </Link>
               </li>
 
               {/* Services with submenu */}
               <li>
-                <div className="py-3 px-4 text-lg font-medium">Services</div>
+                <div className="py-3 px-4 text-lg font-medium">Tjenester</div>
                 <ul className="ml-4 mt-2 space-y-2">
                   <li>
                     <Link
@@ -129,7 +129,7 @@ const Navbar = () => {
                       className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
                       onClick={closeMenu}
                     >
-                      Sale
+                      Salg
                     </Link>
                   </li>
                   <li>
@@ -138,7 +138,7 @@ const Navbar = () => {
                       className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
                       onClick={closeMenu}
                     >
-                      Marketing
+                      Markedsføring
                     </Link>
                   </li>
                 </ul>
@@ -150,7 +150,7 @@ const Navbar = () => {
                   className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
                   onClick={closeMenu}
                 >
-                  About
+                  Om
                 </Link>
               </li>
             </ul>
