@@ -10,6 +10,7 @@
   --color-customaccent-hover: #d15a4f;
   --color-custombase: var(--background);
   --color-customprimary: var(--foreground);
+  --inset-shadow-top: inset 0 1px 2px rgba(0, 0, 0, 0.25); 
 }
 
 @theme inline {

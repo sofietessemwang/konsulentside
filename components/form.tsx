@@ -1,50 +1,38 @@
 "use client";
 import React, { FormEvent, useState } from "react";
 import { useEmailForm } from "@/context/EmailFormContext";
+import useContactForm from "@/hooks/useContactForm";
 
 const ContactForm = () => {
   const { isOpen, toggleOpen } = useEmailForm();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(false);
+ const {
+    name,
+    setName,
+    email,
+    setEmail,
+    message,
+    setMessage,
+    success,
+    isSubmitting,
+    onSubmit,
+    resetForm,
+  } = useContactForm();
 
   if (!isOpen) return null;
 
-  const onSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-        }),
-        headers: {
-          "content-type": "application/json",
-        },
-      });
-      if (res.ok) {
-        setName("");
-        setEmail("");
-        setMessage("");
-        setSuccess(true); // Show notification
-        setTimeout(() => setSuccess(false), 3000);
-      }
-    } catch (err: any) {
-      console.error("error", err);
-    }
+  const handleClose = () => {
+    resetForm();
+    toggleOpen();
   };
+  
 
   return (
     <div className=" fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-base-300/50 ">
       <div className=" flex flex-col items-center w-full max-w-md p-8 bg-white rounded shadow-lg relative">
         <button
           className="absolute top-2 right-2 text-2xl cursor-pointer"
-          onClick={toggleOpen}
+          onClick={handleClose}
           aria-label="Close"
         >
           &times;
@@ -92,7 +80,9 @@ const ContactForm = () => {
           <button
             className="btn btn-soft btn-secondary w-full bg-[#FF6F61] text-[#333333]"
             type="submit"
+            disabled={isSubmitting}
           >
+            {isSubmitting ? "Submitting..." : "Submit"}
             Submit
           </button>
         </form>

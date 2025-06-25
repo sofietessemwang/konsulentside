@@ -8,8 +8,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isOpen, toggleOpen } = useEmailForm();
 
- 
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -164,7 +162,7 @@ const Navbar = () => {
                 variant={"bg-customaccent hover:bg-customaccent-hover w-full"}
                 opensEmailForm
                 onClick={() => {
-                 toggleOpen();
+                  toggleOpen();
                   closeMenu();
                 }}
               />

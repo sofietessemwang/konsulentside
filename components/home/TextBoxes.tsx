@@ -2,14 +2,21 @@
 import React from "react";
 import Button from "../Button";
 import { useEmailForm } from "@/context/EmailFormContext";
+import { slideFromBottom, useScrollAnimation } from "@/hooks/useAnimations";
 
 const TextBoxes = () => {
   const { isOpen, toggleOpen } = useEmailForm();
+  const isVisible = useScrollAnimation(0.1);
 
   return (
     <>
       <div className="relative -mt-5 px-4 md:px-8 lg:px-16 ">
-        <div className="flex flex-col  md:flex-row gap-6 justify-center items-center md:items-stretch max-w-6xl mx-auto">
+        <div
+          id="scroll-animate"
+          className={`flex flex-col  md:flex-row gap-6 justify-center items-center md:items-stretch max-w-6xl mx-auto
+        ${slideFromBottom(isVisible)}
+                  `}
+        >
           <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col flex-1 max-w-sm">
             {/* Content for box 1 */}
             <h2 className="text-2xl font-bold">Kom i gang</h2>
