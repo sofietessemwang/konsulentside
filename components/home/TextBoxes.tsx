@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import Button from "../Button";
+import { useEmailForm } from "@/context/EmailFormContext";
 
 const TextBoxes = () => {
+  const { isOpen, toggleOpen } = useEmailForm();
+
   return (
     <>
       <div className="relative -mt-5 px-4 md:px-8 lg:px-16 ">
@@ -21,6 +25,8 @@ const TextBoxes = () => {
               title={"Oppstarthjelp"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
               size={"sm"}
+              opensEmailForm
+              onClick={toggleOpen}
             />
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col flex-1 max-w-sm">
@@ -39,6 +45,8 @@ const TextBoxes = () => {
               title={"Veien videre"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
               size={"sm"}
+              opensEmailForm
+              onClick={toggleOpen}
             />
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col flex-1 max-w-sm">
@@ -55,6 +63,8 @@ const TextBoxes = () => {
               type={"button"}
               title={"Ekspertveiledning"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
+              opensEmailForm
+              onClick={toggleOpen}
             />
           </div>
         </div>

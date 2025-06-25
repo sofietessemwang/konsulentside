@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import Link from "next/link";
+import { useEmailForm } from "@/context/EmailFormContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isOpen, toggleOpen } = useEmailForm();
 
-  const handleContactButton = () => {
-    console.log("trykket");
-  };
+ 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar shadow-sm  z-50 sticky top-0 bg-custombase ">
+      <div className="navbar shadow-sm  z-50 sticky top-0">
         <div className="navbar-start">
           {/* Mobile hamburger/close button */}
           <div className="lg:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop menu */}
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex  rounded-full  bg-white/70 backdrop-blur-none ">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link href={""}>Referanser</Link>
@@ -97,7 +97,8 @@ const Navbar = () => {
             type={"button"}
             title={"Kontakt meg"}
             variant={"bg-customaccent hover:bg-customaccent-hover"}
-            onClick={handleContactButton}
+            opensEmailForm
+            onClick={toggleOpen}
           />
         </div>
       </div>
@@ -161,8 +162,9 @@ const Navbar = () => {
                 type={"button"}
                 title={"Kontakt meg"}
                 variant={"bg-customaccent hover:bg-customaccent-hover w-full"}
+                opensEmailForm
                 onClick={() => {
-                  handleContactButton();
+                 toggleOpen();
                   closeMenu();
                 }}
               />

@@ -1,4 +1,5 @@
 "use client";
+import { useEmailForm } from "@/context/EmailFormContext";
 import React from "react";
 
 type ButtonProps = {
@@ -9,6 +10,7 @@ type ButtonProps = {
   variant: string;
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
+  opensEmailForm?: boolean;
 };
 
 const Button = ({
@@ -18,7 +20,19 @@ const Button = ({
   variant,
   size = "md",
   onClick,
+  opensEmailForm = false,
 }: ButtonProps) => {
+  const {toggleOpen} = useEmailForm();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (opensEmailForm){
+      toggleOpen();
+    }
+    if(onClick){
+      onClick();
+    }
+  }
+
   const sizeClasses = {
     sm: "w-32 h-10 px-4 text-sm",
     md: "w-40 h-12 px-6 text-base",
@@ -28,7 +42,7 @@ const Button = ({
     <>
       <button
         type={type}
-        onClick={onClick}
+        onClick={handleClick}
         className={`flex items-center justify-center gap-3 rounded-sm text-customprimary ${variant} ${sizeClasses[size]} cursor-pointer`}
       >
         {/* {icon && <Image src={icon} alt={title} width={25} height={24} />} */}
