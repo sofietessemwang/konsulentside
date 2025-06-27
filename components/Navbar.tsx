@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar shadow-sm  z-50 sticky top-0">
+      <div className="navbar  z-50 fixed top-0">
         <div className="navbar-start">
           {/* Mobile hamburger/close button */}
           <div className="lg:hidden">
@@ -66,26 +66,34 @@ const Navbar = () => {
         </div>
 
         {/* Desktop menu */}
-        <div className="navbar-center hidden lg:flex  rounded-full  bg-white/70 backdrop-blur-none ">
+        <div className="navbar-center hidden lg:flex  rounded-full  bg-white">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link href={""}>Referanser</Link>
+            <li className="">
+              <Link className=" hover:bg-transparent transition-transform duration-200 hover:scale-110" href={""}>
+                Referanser
+              </Link>
             </li>
             <li>
               <details>
-                <summary>Tjenester</summary>
+                <summary className="  hover:bg-transparent transition-transform duration-200 hover:scale-110">Tjenester</summary>
                 <ul className="p-2">
                   <li>
-                    <Link href={""}>Salg</Link>
+                    <Link className="  hover:bg-transparent transition-transform duration-200 hover:scale-110" href={""}>
+                      Salg
+                    </Link>
                   </li>
                   <li>
-                    <Link href={""}>Markedsføring</Link>
+                    <Link className="  hover:bg-transparent transition-transform duration-200 hover:scale-110 " href={""}>
+                      Markedsføring
+                    </Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <Link href={"/about"}>Om</Link>
+              <Link className=" hover:bg-transparent transition-transform duration-200 hover:scale-110 " href={"/about"}>
+                Om
+              </Link>
             </li>
           </ul>
         </div>
@@ -93,7 +101,8 @@ const Navbar = () => {
         <div className="navbar-end">
           <Button
             type={"button"}
-            title={"Kontakt meg"}
+            title={"Ta kontakt"}
+            icon="/arrow.svg"
             variant={"bg-customaccent hover:bg-customaccent-hover"}
             opensEmailForm
             onClick={toggleOpen}
@@ -104,14 +113,14 @@ const Navbar = () => {
       {/* Full-width mobile menu overlay */}
       {isMenuOpen && (
         /* skal egentlig være absolute her tror jeg men da dukker den ikke opp. hvis problemer senere sjekk her */
-        <div className="lg:hidden relative top-full left-0 right-0 z-40 bg-base-100 shadow-lg">
+        <div className="lg:hidden relative top-15 left-0 right-0 z-40 bg-base-100 shadow-lg rounded-2xl">
           {/* Menu items */}
           <div className="p-4">
             <ul className="space-y-4">
               <li>
                 <Link
                   href={""}
-                  className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-lg  hover:bg-transparent transition-transform duration-200 hover:scale-103 rounded-lg"
                   onClick={closeMenu}
                 >
                   Referanser
@@ -125,7 +134,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href={""}
-                      className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
+                      className="block py-2 px-4  rounded-lg  hover:bg-transparent transition-transform duration-200 hover:scale-103"
                       onClick={closeMenu}
                     >
                       Salg
@@ -134,7 +143,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href={""}
-                      className="block py-2 px-4 hover:bg-base-200 rounded-lg transition-colors"
+                      className="block py-2 px-4  rounded-lg  hover:bg-transparent transition-transform duration-200 hover:scale-103"
                       onClick={closeMenu}
                     >
                       Markedsføring
@@ -146,7 +155,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href={"/about"}
-                  className="block py-3 px-4 text-lg hover:bg-base-200 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-lg rounded-lg  hover:bg-transparent transition-transform duration-200 hover:scale-103"
                   onClick={closeMenu}
                 >
                   Om
@@ -158,9 +167,10 @@ const Navbar = () => {
             <div className="mt-8">
               <Button
                 type={"button"}
-                title={"Kontakt meg"}
+                title={"Ta kontakt"}
                 variant={"bg-customaccent hover:bg-customaccent-hover w-full"}
                 opensEmailForm
+                icon="/arrow.svg"
                 onClick={() => {
                   toggleOpen();
                   closeMenu();

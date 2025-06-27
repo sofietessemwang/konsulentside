@@ -56,7 +56,7 @@ const FooterContactForm = () => {
         />
         
         <button
-          className="btn btn-sm btn-primary w-full"
+          className="btn btn-sm bg-customaccent w-full"
           type="submit"
           disabled={isSubmitting}
         >

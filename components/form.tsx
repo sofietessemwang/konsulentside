@@ -38,15 +38,14 @@ const ContactForm = () => {
           &times;
         </button>
         <h1 className="relative text-4xl font-extrabold dark:text-white text-[#FF6F61]">
-          Contact us!
+          Kontakt meg!
         </h1>
         <p className="text-center ">
-          Lets get this conversation started! Tell us about yourself and we will
-          contact you
+          La oss få samtalen i gang, fortell om deg selv så tar jeg kontakt
         </p>
         {success && (
           <div className="mb-4 px-4 py-2 bg-[#A7C6ED] rounded">
-            Submission succeeded!
+            Innsending velykket!
           </div>
         )}
         <form
@@ -59,7 +58,7 @@ const ContactForm = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            placeholder="Name"
+            placeholder="Navn"
           />
           <input
             className="input input-secondary w-full border-[#FF6F61]"
@@ -75,15 +74,16 @@ const ContactForm = () => {
             onChange={(e) => setMessage(e.target.value)}
             name=""
             id=""
-            placeholder="Message"
+            placeholder="Melding"
           ></textarea>
           <button
             className="btn btn-soft btn-secondary w-full bg-[#FF6F61] text-[#333333]"
             type="submit"
+            title="Send inn"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit"}
-            Submit
+          
           </button>
         </form>
       </div>

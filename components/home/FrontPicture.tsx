@@ -9,21 +9,22 @@ const FrontPicture = () => {
   return (
     <>
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen z-10"
         style={{
-          backgroundImage: "url('office.png')",
+          backgroundImage: "url('whiteOffice.jpg')",
         }}
       >
-        <div className="hero-overlay"></div>
+        {/* legg til hero overlay her så får du mørk overlay hvis det ønskes */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white z-0"></div>
         {/* vet ikke helt om jeg liker fargen på denne altså */}
         <div className="absolute inset-0 flex items-center justify-start pl-8 md:pl-16 lg:pl-24">
           <div
-            className={`text-customprimary bg-white/90 rounded-sm p-8 max-w-md ${slideFromRight(
+            className={`text-customprimary rounded-sm p-8 max-w-md ${slideFromRight(
               isVisible,
               isMounted
             )}`}
           >
-            <h1 className="mb-5 text-5xl font-bold ">Skape muligheter</h1>
+            <h1>Skape muligheter</h1>
             <p className="mb-5">
               Her kan man ha en bra pitch, motiverende ord ett eller annet, kan
               også ha kontakt meg knappen her i stedet for les mer. men noe
