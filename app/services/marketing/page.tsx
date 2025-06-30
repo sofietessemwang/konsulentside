@@ -1,0 +1,22 @@
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/form";
+import Navbar from "@/components/Navbar";
+import { EmailFormProvider } from "@/context/EmailFormContext";
+import React from "react";
+
+const MarketingPage = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <EmailFormProvider>
+        <ContactForm />
+        <Navbar />
+        <main className="flex-1">
+          <div className="text-7xl text-center py-20">Innhold kommer snart</div>
+        </main>
+        <Footer />
+      </EmailFormProvider>
+    </div>
+  );
+};
+
+export default MarketingPage;
