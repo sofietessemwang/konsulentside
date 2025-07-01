@@ -21,13 +21,15 @@ const AboutPage = () => {
           {/* <div className="min-h-80 bg-[#a7c6ed] content-center">
             <h1 className="text-center">Om meg</h1>
           </div> */}
-          <Header title={"Om meg"} />
+          <Header title={"Om meg"} subtitle="Hjem > Om" />
           <Hero />
           {/* <Education/> */}
           <Motivation />
 
           <div className="py-10 ">
-            <h2 className="text-center">Hva jeg har holdt på med i det siste</h2>
+            <h2 className="text-center">
+              Hva jeg har holdt på med i det siste
+            </h2>
             <TimelineHorizontal
               events={[
                 {
