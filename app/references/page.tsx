@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/form";
+import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import { EmailFormProvider } from "@/context/EmailFormContext";
 import React from "react";
@@ -11,6 +12,7 @@ const ReferencesPage = () => {
         <ContactForm />
         <Navbar />
         <main className="flex-1">
+          <Header title={"Referanser"} subtitle="Hjem > Referanser" />
           <div className="text-7xl text-center py-20">Innhold kommer snart</div>
         </main>
         <Footer />

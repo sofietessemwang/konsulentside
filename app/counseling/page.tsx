@@ -1,21 +1,24 @@
+import CoreValues from "@/components/counseling/CoreValues";
+import EndPicture from "@/components/counseling/EndPicture";
+import TopInfo from "@/components/counseling/TopInfo";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/form";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import MainComponent from "@/components/Services/MainComponent";
 import { EmailFormProvider } from "@/context/EmailFormContext";
-import { salesTrainingData } from "@/pages/services/Sales";
 import React from "react";
 
-const SalesPage = () => {
+const page = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <EmailFormProvider>
         <ContactForm />
         <Navbar />
         <main className="flex-1">
-          <Header title={"Salg"} subtitle="Hjem > Tjenester > Salg" />
-          <MainComponent data={salesTrainingData} />
+          <Header title={"Rådgivning"} subtitle="Hjem > Rådgivning" />
+          <TopInfo/>
+          <CoreValues/>
+          <EndPicture/>
         </main>
         <Footer />
       </EmailFormProvider>
@@ -23,4 +26,4 @@ const SalesPage = () => {
   );
 };
 
-export default SalesPage;
+export default page;

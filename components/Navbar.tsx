@@ -92,7 +92,9 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <a className="text-xl" href="/">Ronny Wang</a>
+          <a className="text-xl" href="/">
+            Ronny Wang
+          </a>
         </div>
 
         {/* Desktop menu */}
@@ -109,7 +111,7 @@ const Navbar = () => {
             <li className="flex items-stretch">
               <Link
                 className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none"
-                href={""}
+                href={"/counseling"}
               >
                 Rådgivning
               </Link>
@@ -156,6 +158,15 @@ const Navbar = () => {
                       Markedsføring
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      className="block px-4 py-2 hover:bg-gray-100 rounded transition-transform duration-200 hover:scale-105 focus:outline-none"
+                      href={"/services/service"}
+                      onClick={closeSub}
+                    >
+                      Service
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>
@@ -199,7 +210,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href={""}
+                  href={"/counseling"}
                   className="block py-3 px-4 text-lg hover:bg-transparent transition-transform duration-200 hover:scale-103 rounded-lg"
                   onClick={closeMenu}
                 >
@@ -227,6 +238,15 @@ const Navbar = () => {
                       onClick={closeMenu}
                     >
                       Markedsføring
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={"/services/service"}
+                      className="block py-2 px-4 rounded-lg hover:bg-transparent transition-transform duration-200 hover:scale-103"
+                      onClick={closeMenu}
+                    >
+                      Service
                     </Link>
                   </li>
                 </ul>
