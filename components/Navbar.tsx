@@ -106,6 +106,14 @@ const Navbar = () => {
                 Referanser
               </Link>
             </li>
+            <li className="flex items-stretch">
+              <Link
+                className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none"
+                href={""}
+              >
+                Rådgivning
+              </Link>
+            </li>
             <li ref={submenuRef} className="relative flex items-stretch">
               <button
                 className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none cursor-pointer"
@@ -187,6 +195,15 @@ const Navbar = () => {
                   onClick={closeMenu}
                 >
                   Referanser
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={""}
+                  className="block py-3 px-4 text-lg hover:bg-transparent transition-transform duration-200 hover:scale-103 rounded-lg"
+                  onClick={closeMenu}
+                >
+                  Rådgivning
                 </Link>
               </li>
 

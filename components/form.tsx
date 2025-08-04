@@ -6,7 +6,7 @@ import useContactForm from "@/hooks/useContactForm";
 const ContactForm = () => {
   const { isOpen, toggleOpen } = useEmailForm();
 
- const {
+  const {
     name,
     setName,
     email,
@@ -25,7 +25,6 @@ const ContactForm = () => {
     resetForm();
     toggleOpen();
   };
-  
 
   return (
     <div className=" fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-sm bg-base-300/50 ">
@@ -79,11 +78,9 @@ const ContactForm = () => {
           <button
             className="btn btn-soft btn-secondary w-full bg-[#FF6F61] text-[#333333]"
             type="submit"
-            
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sender inn..." : "Send inn"}
-          
           </button>
         </form>
       </div>

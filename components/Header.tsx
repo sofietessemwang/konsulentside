@@ -17,8 +17,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle }) => {
   }}
 >
 
-    <h1>Om meg</h1>
-    <p>Hjem > Om </p>
+    <h1>{title}</h1>
+    <p>{subtitle}</p>
 
 
 
