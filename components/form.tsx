@@ -79,10 +79,10 @@ const ContactForm = () => {
           <button
             className="btn btn-soft btn-secondary w-full bg-[#FF6F61] text-[#333333]"
             type="submit"
-            title="Send inn"
+            
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Submit"}
+            {isSubmitting ? "Sender inn..." : "Send inn"}
           
           </button>
         </form>
