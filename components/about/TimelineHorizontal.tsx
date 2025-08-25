@@ -24,8 +24,7 @@ const TimelineHorizontal: React.FC<TimelineProps> = ({ events }) => {
               {event.direction == "top" ? (
                 <EventCard
                   heading={event.heading}
-                  subHeading={event.subHeading}
-                />
+                  subHeading={event.subHeading} icon={""}                />
               ) : (
                 <div className="h-20"></div> /* space for alignment */
               )}
@@ -56,8 +55,7 @@ const TimelineHorizontal: React.FC<TimelineProps> = ({ events }) => {
               {event.direction === "bottom" ? (
                 <EventCard
                   heading={event.heading}
-                  subHeading={event.subHeading}
-                />
+                  subHeading={event.subHeading} icon={""}                />
               ) : (
                 <div className="h-20"></div>
               )}
