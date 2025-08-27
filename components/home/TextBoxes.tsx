@@ -19,17 +19,20 @@ const TextBoxes = () => {
         >
           <div className="bg-white rounded-lg  p-6 flex flex-col flex-1 max-w-sm">
             {/* Content for box 1 */}
-            <h2 className="text-2xl font-bold">Kom i gang</h2>
-            <p className="py-3 leading-relaxed">
-              her står det masse tekst bla bla bla bla Disse tre boksene tenkte
-              jeg skulle fange brukere i forskjellige prosjektnivåer, altså
-              start medium og finish. call to action, få kunder i alle stadier
-              av utviklingsspekteret. knappene skal også fange det, tenker at
-              ikke alle skal hete kontakt meg men at de skal hete forskjellig
+            <h2 className="text-2xl font-bold">
+              Kundeinnsikt og personalisering
+            </h2>
+            <p className="py-3 leading-relaxed italic text-gray-600 text-center  ">
+              
+              "Forstå kundene dine dypere med CRM-system"
+            </p>
+            <p>
+              Få innsikt i kundeadferd og preferanser for å tilby skreddersydde
+              opplevelser som bygger lojalitet.
             </p>
             <Button
               type={"button"}
-              title={"Oppstarthjelp"}
+              title={"Kom i gang"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
               size={"md"}
               opensEmailForm
@@ -39,18 +42,20 @@ const TextBoxes = () => {
           </div>
           <div className="bg-white rounded-lg  p-6 flex flex-col flex-1 max-w-sm">
             {/* Content for box 2 */}
-            <h2 className="text-2xl font-bold">halla</h2>
-            <p className="py-3 leading-relaxed">
-              her står det masse tekst bla bla bla bla Her kan man ha en bra
-              pitch, motiverende ord ett eller annet, kan også ha kontakt meg
-              knappen her i stedet for les mer. men noe breath taking som får
-              brukeren til å ville lese mer nedover. også kult å legge på en
-              bevegelse her, kanskje at den kommer opp unnenifra
+            <h2 className="text-2xl font-bold">
+              Automatisering og effektivitet
+            </h2>
+            <p className="py-3 leading-relaxed italic text-gray-600 text-center ">
+              "Jobb enklere, selg mer med med CRM-systemet"
+            </p>
+            <p>
+              Automatiser rutineoppgaver og forbedre arbeidsflyten slik at
+              teamet kan fokusere på det som virkelig betyr noe.
             </p>
 
             <Button
               type={"button"}
-              title={"Veien videre"}
+              title={"Kom i gang"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
               size={"md"}
               opensEmailForm
@@ -60,17 +65,19 @@ const TextBoxes = () => {
           </div>
           <div className="bg-white rounded-lg  p-6 flex flex-col flex-1 max-w-sm">
             {/* Content for box 3 */}
-            <h2 className="text-2xl font-bold">halla</h2>
-            <p className="py-3 leading-relaxed">
-              her står det masse tekst bla bla bla bla Her kan man ha en bra
-              pitch, motiverende ord ett eller annet, kan også ha kontakt meg
-              knappen her i stedet for les mer. men noe breath taking som får
-              brukeren til å ville lese mer nedover. også kult å legge på en
-              bevegelse her, kanskje at den kommer opp unnenifra
+            <h2 className="text-2xl font-bold">
+              Integrasjon og datadrevet beslutning
+            </h2>
+            <p className="py-3 leading-relaxed italic text-gray-600 text-center ">
+              "Alt i ett, klare kundedata med CRM-systemet"
+            </p>
+            <p>
+              Samle alle kundedata på ett sted og ta smartere beslutninger med
+              sanntidsanalyser og rapporter.
             </p>
             <Button
               type={"button"}
-              title={"Ekspertveiledning"}
+              title={"Kom i gang"}
               variant={"bg-customaccent hover:bg-customaccent-hover mt-auto"}
               size={"md"}
               icon="/arrow.svg"
