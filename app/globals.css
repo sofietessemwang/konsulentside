@@ -1,8 +1,16 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
+}
+@theme {
+  --color-customaccent: #ff6f61;
+  --color-customaccent-hover: #d15a4f;
+  --color-custombase: var(--background);
+  --color-customprimary: var(--foreground);
+  --inset-shadow-top: inset 0 1px 2px rgba(0, 0, 0, 0.25); 
 }
 
 @theme inline {
@@ -20,7 +28,33 @@
 }
 
 body {
+  /* background: linear-gradient(to right, #a2a1a1, #ffffff); */
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@layer base {
+  h1 {
+    @apply text-5xl font-bold text-gray-900 mb-6;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold text-gray-800 mb-4;
+  }
+  
+  h3 {
+    @apply text-2xl font-medium text-gray-700 mb-3;
+  }
+  
+  p {
+    @apply text-base text-gray-600 leading-relaxed mb-4;
+  }
+}
+
+.service-card {
+  @apply bg-white rounded-lg shadow-sm p-6 hover:shadow-lg;
+  height: 300px; /* adjust as needed */
+  overflow: hidden;
+  position: relative;
+}
+
