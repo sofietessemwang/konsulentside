@@ -23,8 +23,8 @@ const AboutPage = () => {
           </div> */}
           <Header title={"Om meg"} subtitle="Hjem > Om" />
           <Hero />
-          {/* <Education/> */}
-          <Motivation />
+          
+          {/* <Motivation />
 
           <div className="py-10 ">
             <h2 className="text-center">
@@ -48,8 +48,8 @@ const AboutPage = () => {
                   direction: "top",
                 },
               ]}
-            />
-          </div>
+            /> 
+          </div>*/}
         </main>
         <Footer />
       </EmailFormProvider>

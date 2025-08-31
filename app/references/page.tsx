@@ -1,4 +1,6 @@
+import ContentComingSoon from "@/components/ContentComingSoon";
 import Footer from "@/components/Footer";
+import FooterContactForm from "@/components/FooterContactForm";
 import ContactForm from "@/components/form";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
@@ -14,7 +16,7 @@ const ReferencesPage = () => {
         <main className="flex-1">
           <Header title={"Referanser"} subtitle="Hjem > Referanser" />
           {/* to do: gjør det mulig å skrive inn kontaktskjemaet */}
-          <div className="text-7xl text-center py-20">Innhold kommer snart</div>
+          <ContentComingSoon/>
         </main>
         <Footer />
       </EmailFormProvider>

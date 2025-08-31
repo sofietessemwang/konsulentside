@@ -4,11 +4,11 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col items-stretch min-h-96 sm:flex-row  py-10 px-10 gap-6 ">
-        <div className="basis-1/4  flex  justify-center items-center ">
-          <img src="meg.png" alt="Ronny Wang" className="min-h-50" />
+        <div className="basis-1/3  flex  justify-center items-center ">
+          <img src="portrett1.jpg" alt="Ronny Wang" className="min-h-50" />
         </div>
 
-        <div className="basis-3/4  flex flex-col justify-center ">
+        <div className="basis-2/3  flex flex-col justify-center ">
           <h2>Ronny Wang</h2>
           <p>
             Jeg har jobbet 30 år med salg og salgsledelse innenfor fagområdet
