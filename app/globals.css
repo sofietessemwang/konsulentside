@@ -6,6 +6,7 @@
   --foreground: #333333;
 }
 @theme {
+  /* forslag: #249ee4 */
   --color-customaccent: #ff6f61;
   --color-customaccent-hover: #d15a4f;
   --color-custombase: var(--background);
