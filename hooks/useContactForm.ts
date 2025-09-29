@@ -39,6 +39,7 @@ const useContactForm = () => {
         setError(result.error || "Something went wrong");
       }
     } catch (err: any) {
+      console.log("halla");
       console.error("error", err);
       setError("Network error occured");
     } finally {
@@ -63,7 +64,11 @@ const useContactForm = () => {
     message,
     setMessage,
     success,
+    setSuccess,
     isSubmitting,
+    setIsSubmitting,
+    error,
+    setError,
     onSubmit,
     resetForm,
   };

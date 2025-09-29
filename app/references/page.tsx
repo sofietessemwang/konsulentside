@@ -18,7 +18,7 @@ const ReferencesPage = () => {
           {/* to do: gjør det mulig å skrive inn kontaktskjemaet */}
           <ContentComingSoon/>
         </main>
-        <Footer />
+        
       </EmailFormProvider>
     </div>
   );

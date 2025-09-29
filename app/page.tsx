@@ -18,7 +18,6 @@ export default function Home() {
           <FrontPicture />
           <TextBoxes />
           <Services />
-          <Carousel/>
         </main>
         <Footer />
       </EmailFormProvider>
