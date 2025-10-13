@@ -98,16 +98,9 @@ const Navbar = () => {
         </div>
 
         {/* Desktop menu */}
-        <div className="navbar-center hidden lg:flex rounded-full bg-white">
-          <ul className="inline-flex flex-row px-1 py-2 w-fit text-sm">
-            <li className="flex items-stretch">
-              <Link
-                className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none"
-                href={"/references"}
-              >
-                Referanser
-              </Link>
-            </li>
+        <div className="navbar-center hidden lg:flex rounded-full bg-white min-w-[40%] ">
+          <ul className="flex flex-row justify-evenly w-full px-1 py-2 text-sm">
+            
             <li className="flex items-stretch">
               <Link
                 className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none"
@@ -118,7 +111,8 @@ const Navbar = () => {
             </li>
             <li ref={submenuRef} className="relative flex items-stretch">
               <button
-                className="flex items-center px-3 py-1.5 rounded transition-transform duration-200 hover:scale-110 focus:outline-none cursor-pointer"
+                className={`flex items-center px-3 py-1.5 rounded transition-all duration-200 hover:scale-110 focus:outline-none cursor-pointer ${
+                isSubOpen ? "bg-gray-200" : ""}`}
                 onClick={toggleSub}
               >
                 Tjenester
@@ -149,15 +143,7 @@ const Navbar = () => {
                       Salg
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      className="block px-4 py-2 hover:bg-gray-100 rounded transition-transform duration-200 hover:scale-105 focus:outline-none"
-                      href={"/services/marketing"}
-                      onClick={closeSub}
-                    >
-                      Markedsføring
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link
                       className="block px-4 py-2 hover:bg-gray-100 rounded transition-transform duration-200 hover:scale-105 focus:outline-none"
@@ -231,15 +217,7 @@ const Navbar = () => {
                       Salg
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href={"/services/marketing"}
-                      className="block py-2 px-4 rounded-lg hover:bg-transparent transition-transform duration-200 hover:scale-103"
-                      onClick={closeMenu}
-                    >
-                      Markedsføring
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link
                       href={"/services/service"}
