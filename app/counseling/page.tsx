@@ -19,7 +19,7 @@ const page = () => {
           <Header title={"Rådgivning"} subtitle="Hjem > Rådgivning" />
           <ContentComingSoon/>
         </main>
-        
+        <Footer/>
       </EmailFormProvider>
     </div>
   );
